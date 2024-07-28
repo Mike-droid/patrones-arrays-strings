@@ -5,11 +5,7 @@ const trap = (height: number[]): number => {
 
   let leftPointer = 0
   let rightPointer = height.length - 1
-
-  const heightsLeft: number[] = []
   let maximumHeightLeft = 0
-
-  const heightsRight: number[] = []
   let maximumHeightRight = 0
 
   let waterSquares = 0
@@ -23,11 +19,9 @@ const trap = (height: number[]): number => {
     }
 
     if (height[leftPointer] < height[rightPointer]) {
-      heightsLeft.push(height[leftPointer])
       waterSquares += maximumHeightLeft - height[leftPointer]
       leftPointer += 1
     } else {
-      heightsRight.push(height[rightPointer])
       waterSquares += maximumHeightRight - height[rightPointer]
       rightPointer -= 1
     }
